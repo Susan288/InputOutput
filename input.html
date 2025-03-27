@@ -1,80 +1,33 @@
+<!-- input.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Student Form</title>
+  <title>Input Values</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: linear-gradient(135deg, #74b9ff, #0984e3);
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin: 0;
-    }
-    .container {
-      background-color: #fff;
-      padding: 40px;
-      border-radius: 12px;
-      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
-      max-width: 400px;
-      width: 100%;
-    }
-    h1 {
-      color: #0984e3;
-      text-align: center;
-    }
-    label {
-      display: block;
-      margin: 10px 0 5px;
-    }
-    input[type="text"] {
-      width: 100%;
-      padding: 10px;
-      margin-top: 5px;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      font-size: 16px;
-    }
-    button {
-      width: 100%;
-      margin-top: 20px;
-      padding: 12px;
-      background-color: #0984e3;
-      color: white;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      font-size: 16px;
-    }
-    button:hover {
-      background-color: #74b9ff;
-    }
+    body { font-family: Arial, sans-serif; text-align: center; margin-top: 50px; }
+    input { margin: 5px; padding: 10px; width: 80px; }
+    button { padding: 10px 20px; background-color: #4CAF50; color: white; border: none; cursor: pointer; }
+    button:hover { background-color: #45a049; }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>Student Form</h1>
-    <form id="studentForm">
-      <label for="name">Name:</label>
-      <input type="text" id="name" name="name" required />
-
-      <label for="roll">Roll Number:</label>
-      <input type="text" id="roll" name="roll" required />
-
-      <button type="submit">Submit</button>
-    </form>
-  </div>
+  <h1>Enter 10 Values</h1>
+  <form id="dataForm" action="output.html" method="get">
+    <div id="inputContainer"></div>
+    <button type="submit">Submit</button>
+  </form>
 
   <script>
-    document.getElementById("studentForm").addEventListener("submit", function(event) {
-      event.preventDefault();
-      const name = document.getElementById("name").value;
-      const roll = document.getElementById("roll").value;
-      window.location.href = `output.html?name=${encodeURIComponent(name)}&roll=${encodeURIComponent(roll)}`;
-    });
+    const container = document.getElementById('inputContainer');
+    for (let i = 0; i < 10; i++) {
+      const input = document.createElement('input');
+      input.type = 'number';
+      input.name = `value${i}`;
+      input.placeholder = `Value ${i + 1}`;
+      container.appendChild(input);
+    }
   </script>
 </body>
 </html>
