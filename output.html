@@ -1,147 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Dress Designing Studio</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fashion Design Platform</title>
   <style>
     body {
-      font-family: 'Poppins', sans-serif;
-      background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
-      color: #333;
       margin: 0;
-      padding: 0;
-    }
-    header {
-      text-align: center;
-      padding: 1.5rem;
-      background-color: #fff;
-      box-shadow: 0 3px 6px rgba(0,0,0,0.1);
-    }
-    h1 {
-      color: #ff4081;
-      font-size: 2rem;
-      margin: 0;
-    }
-    .container {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom right, #1e0e3e, #2a1659);
+      color: white;
       display: flex;
-      flex-wrap: wrap;
-      justify-content: space-around;
-      padding: 2rem;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
     }
-    .controls, .preview {
-      background-color: #fff;
-      border-radius: 15px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      padding: 1.5rem;
-      margin: 1rem;
-      flex: 1 1 300px;
-      max-width: 500px;
+
+    .container {
+      padding: 20px;
+      max-width: 800px;
     }
-    .controls h2 {
-      color: #673ab7;
-      margin-bottom: 1rem;
+
+    h1 {
+      font-size: 4rem;
+      font-weight: 800;
+      margin-bottom: 20px;
     }
-    label {
-      display: block;
-      margin: 1rem 0 0.5rem;
+
+    p {
+      font-size: 1.3rem;
+      color: #d1c9f0;
+      margin-bottom: 30px;
     }
-    select, input[type="color"], input[type="file"] {
-      width: 100%;
-      padding: 0.5rem;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-    }
-    .dress-preview {
-      height: 300px;
-      background-color: #e0e0e0;
-      border: 2px dashed #999;
+
+    .btn {
+      background-color: #9c6cf2;
+      color: white;
+      font-size: 1.2rem;
+      padding: 15px 30px;
+      border: none;
       border-radius: 10px;
-      position: relative;
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-position: center;
+      cursor: pointer;
       transition: background 0.3s ease;
     }
-    .dress-shape {
-      position: absolute;
-      width: 60%;
-      height: 80%;
-      top: 10%;
-      left: 20%;
-      background-color: #fff;
-      border-radius: 30% 30% 50% 50%;
-      opacity: 0.8;
+
+    .btn:hover {
+      background-color: #7f4de2;
     }
-    footer {
-      text-align: center;
-      padding: 1rem;
-      background-color: #fff;
-      color: #666;
-      font-size: 0.9rem;
+
+    .logo {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      display: flex;
+      align-items: center;
+      font-weight: bold;
+      font-size: 1.5rem;
+    }
+
+    .logo img {
+      width: 40px;
+      margin-right: 10px;
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2.5rem;
+      }
+
+      p {
+        font-size: 1rem;
+      }
+
+      .btn {
+        padding: 12px 25px;
+        font-size: 1rem;
+      }
     }
   </style>
 </head>
 <body>
-
-  <header>
-    <h1>🎨 Dress Designing Studio</h1>
-  </header>
-
-  <div class="container">
-    <div class="controls">
-      <h2>Customize Your Dress</h2>
-
-      <label for="dressType">Dress Type</label>
-      <select id="dressType">
-        <option>Gown</option>
-        <option>Skirt</option>
-        <option>Kurti</option>
-        <option>Saree</option>
-        <option>Top & Jeans</option>
-      </select>
-
-      <label for="colorPicker">Select Dress Color</label>
-      <input type="color" id="colorPicker" value="#ff69b4">
-
-      <label for="patternUpload">Upload Pattern/Texture</label>
-      <input type="file" id="patternUpload" accept="image/*">
-
-    </div>
-
-    <div class="preview">
-      <h2>Live Preview</h2>
-      <div class="dress-preview" id="dressPreview">
-        <div class="dress-shape" id="dressShape"></div>
-      </div>
-    </div>
+  <div class="logo">
+    <img src="logo.png" alt="Logo" />
+    DressAI
   </div>
-
-  <footer>
-    &copy; 2025 Suzanonia Creations – Imagine. Design. Wear.
-  </footer>
-
-  <script>
-    const colorPicker = document.getElementById('colorPicker');
-    const patternUpload = document.getElementById('patternUpload');
-    const dressShape = document.getElementById('dressShape');
-    const dressPreview = document.getElementById('dressPreview');
-
-    colorPicker.addEventListener('input', () => {
-      dressShape.style.backgroundColor = colorPicker.value;
-      dressPreview.style.backgroundImage = '';
-    });
-
-    patternUpload.addEventListener('change', (e) => {
-      const file = e.target.files[0];
-      if (file && file.type.startsWith('image/')) {
-        const reader = new FileReader();
-        reader.onload = function(event) {
-          dressPreview.style.backgroundImage = `url(${event.target.result})`;
-        };
-        reader.readAsDataURL(file);
-      }
-    });
-  </script>
-
+  <div class="container">
+    <h1>Free Online Fashion<br>Design Platform</h1>
+    <p>Bring your style to life with AI tools, templates, and drag-and-drop fashion design editor.</p>
+    <button class="btn">Start Designing Now</button>
+  </div>
 </body>
 </html>
