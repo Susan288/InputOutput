@@ -1,94 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Fashion Design Platform</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dress Designing Studio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
   <style>
-    body {
+    * {
       margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(to bottom right, #1e0e3e, #2a1659);
-      color: white;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+    body {
+      background: linear-gradient(135deg, #000000, #0f1b3f, #4b0000);
+      color: #ffffff;
+    }
+    header {
       display: flex;
-      justify-content: center;
+      justify-content: space-between;
       align-items: center;
-      height: 100vh;
+      padding: 20px 50px;
+      background: linear-gradient(90deg, #000000, #1e1e2f);
+      box-shadow: 0 0 10px #ff0000;
+    }
+    header h1 {
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: #ff4d4d;
+    }
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #ffffff;
+      font-weight: 600;
+    }
+    .hero {
       text-align: center;
+      padding: 100px 20px;
+      background: linear-gradient(145deg, #1f1f1f, #000000);
     }
-
-    .container {
-      padding: 20px;
-      max-width: 800px;
-    }
-
-    h1 {
-      font-size: 4rem;
+    .hero h2 {
+      font-size: 3.5rem;
       font-weight: 800;
       margin-bottom: 20px;
+      background: linear-gradient(to right, #ff0000, #007bff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
-
-    p {
-      font-size: 1.3rem;
-      color: #d1c9f0;
-      margin-bottom: 30px;
-    }
-
-    .btn {
-      background-color: #9c6cf2;
-      color: white;
+    .hero p {
       font-size: 1.2rem;
-      padding: 15px 30px;
+      max-width: 700px;
+      margin: 0 auto 30px auto;
+      color: #ccc;
+    }
+    .btn-start {
+      padding: 15px 35px;
+      font-size: 1rem;
+      background: linear-gradient(to right, #ff1e56, #003cff);
+      color: #fff;
       border: none;
-      border-radius: 10px;
+      border-radius: 30px;
       cursor: pointer;
-      transition: background 0.3s ease;
+      transition: transform 0.3s;
+      box-shadow: 0 0 10px #ff0000;
     }
-
-    .btn:hover {
-      background-color: #7f4de2;
+    .btn-start:hover {
+      transform: scale(1.05);
     }
-
-    .logo {
-      position: absolute;
-      top: 20px;
-      left: 20px;
-      display: flex;
-      align-items: center;
-      font-weight: bold;
-      font-size: 1.5rem;
+    .features {
+      padding: 60px 30px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      background: linear-gradient(135deg, #000000, #0d001a);
     }
-
-    .logo img {
-      width: 40px;
-      margin-right: 10px;
+    .feature-card {
+      background: linear-gradient(160deg, #1a1a2e, #2c003e);
+      padding: 25px;
+      border-radius: 15px;
+      text-align: center;
+      color: #fff;
+      box-shadow: 0 0 10px rgba(255, 0, 0, 0.4);
     }
-
-    @media (max-width: 600px) {
-      h1 {
-        font-size: 2.5rem;
-      }
-
-      p {
-        font-size: 1rem;
-      }
-
-      .btn {
-        padding: 12px 25px;
-        font-size: 1rem;
-      }
+    .feature-card h3 {
+      margin-bottom: 15px;
+      color: #ff6666;
+    }
+    footer {
+      text-align: center;
+      padding: 30px;
+      background: linear-gradient(90deg, #000000, #1a1a1a);
+      color: #aaa;
     }
   </style>
 </head>
 <body>
-  <div class="logo">
-    <img src="logo.png" alt="Logo" />
-    DressAI
-  </div>
-  <div class="container">
-    <h1>Free Online Fashion<br>Design Platform</h1>
-    <p>Bring your style to life with AI tools, templates, and drag-and-drop fashion design editor.</p>
-    <button class="btn">Start Designing Now</button>
-  </div>
+  <header>
+    <h1>Dress Designer Pro</h1>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#features">Features</a>
+      <a href="#start">Start Designing</a>
+      <a href="#support">Support</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2>Create Stunning Fashion Designs</h2>
+    <p>Use intuitive drag-and-drop tools, AI suggestions, and modern symbols to bring your imagination to life with ease.</p>
+    <button class="btn-start" id="start">Start Now Free</button>
+  </section>
+
+  <section class="features" id="features">
+    <div class="feature-card">
+      <h3>AI Design Suggestions</h3>
+      <p>Get smart design ideas from our AI to boost your creativity.</p>
+    </div>
+    <div class="feature-card">
+      <h3>Drag and Drop Tools</h3>
+      <p>Effortlessly build and style garments with simple tools.</p>
+    </div>
+    <div class="feature-card">
+      <h3>Symbol Library</h3>
+      <p>Access professional templates, fabrics, and fashion icons.</p>
+    </div>
+    <div class="feature-card">
+      <h3>Cloud Save</h3>
+      <p>Access your designs anywhere, anytime, with cloud storage.</p>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 Dress Designer Pro. All rights reserved.
+  </footer>
 </body>
 </html>
